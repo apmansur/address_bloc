@@ -41,19 +41,11 @@
    end
    
     describe "#entry_demolish" do
-        before do
-          $stdin = StringIO.new("James T. Kirk\n")
-        end
-
-      after do
-        $stdin = STDIN
-      end
-
       it "deletes all entries in entries array" do
         book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
-        book.entry_demolish
+        book.entry_demolish("yes")
         expect(book.entries.size).to eq(0)
-    end
+      end
    end
    
    

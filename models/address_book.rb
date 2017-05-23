@@ -8,15 +8,18 @@ class AddressBook
        @entries = []
      end
 
-    def entry_demolish 
+    def entry_demolish (answer=gets.chomp)
         puts "are you sure you would like to delete all entries: yes or no \n"
-        answer = gets.chomp.to_s
+        answer
         if answer.downcase == "yes"
-            @address_book.entries.clear
+            @entries.clear
+        elsif answer.downcase == "no"
+            puts "entries were NOT deleted"
         else
             puts "invalid entry"
         end
     end
+    
  
    def add_entry(name, phone_number, email)
      index = 0
